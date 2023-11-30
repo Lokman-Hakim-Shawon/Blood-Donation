@@ -8,7 +8,7 @@ const UserHome = () => {
     const [data,setdata]=useState([])
     console.log(data)
     useEffect(()=>{
-        axios.get('http://localhost:5000/blood_request')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/blood_request')
     .then(res=>{
       const filterdata=res.data.filter(userdata=>user?.email==userdata.donatEmail)
       setdata(filterdata)

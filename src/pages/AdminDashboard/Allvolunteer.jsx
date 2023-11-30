@@ -8,12 +8,12 @@ const Allvolunteer = () => {
     const [volunteer,setvolunteer]=useState([])
     // console.log('data',data,'volunteer',volunteer)
     useEffect(()=>{
-        axios.get('http://localhost:5000/userinformation')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/userinformation')
         .then(res=>{
             setdata(res.data)
         })
         .catch(error=>console.log(error))
-        axios.get('http://localhost:5000/volunteer_data')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/volunteer_data')
         .then(res=>setvolunteer(res.data))
         .catch(error=>console.log(error))
     },[])

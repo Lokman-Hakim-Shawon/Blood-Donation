@@ -19,7 +19,7 @@ const AddBlogs = () => {
        .then(res=>{
          const img=res.data.data.url
          const blogData={img,title,articles}
-         axios.post('http://localhost:5000/blog_data',blogData)
+         axios.post('https://assignment-12-server-drab-nine.vercel.app/blog_data',blogData)
          .then(res=>{
             Swal.fire({
                 position: "top-end",

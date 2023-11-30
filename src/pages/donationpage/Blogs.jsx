@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const Blogs = () => {
     const [data,setdata]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5000/blog_data')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/blog_data')
         .then(res=>setdata(res.data))
         .catch(error=>console.log(error))
     },[])

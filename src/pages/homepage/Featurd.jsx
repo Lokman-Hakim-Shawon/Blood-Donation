@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Featurd = () => {
     const [data,setdata]=useState([])
-    axios.get('http://localhost:5000/featuredData')
+    axios.get('https://assignment-12-server-drab-nine.vercel.app/featuredData')
     .then(res=>setdata(res.data))
     .catch(error=>console.log(error))
     return (

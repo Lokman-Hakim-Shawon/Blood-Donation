@@ -6,7 +6,7 @@ const AdminAllRequest = () => {
     const [data,setdata]=useState([])
     console.log(data)
     useEffect(()=>{
-        axios.get('http://localhost:5000/blood_request')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/blood_request')
     .then(res=>{
         console.log('donor ',res.data)
         setdata(res.data)

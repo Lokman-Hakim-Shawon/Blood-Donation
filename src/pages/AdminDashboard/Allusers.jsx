@@ -14,7 +14,7 @@ const Allusers = () => {
         const active='active'
         const updateActive={active,img:data.img,name:data.name,blood:data.blood,Singledistrict:data.Singledistrict,Singleupazila:data.Singleupazila}
       console.log(data,active)
-      axios.put(`http://localhost:5000/userinformation/${data._id}`,updateActive)
+      axios.put(`https://assignment-12-server-drab-nine.vercel.app/userinformation/${data._id}`,updateActive)
       .then(()=>{
         // console.log(res.data)
        Navigate('/')        
@@ -26,7 +26,7 @@ const Allusers = () => {
         const active='block'
         const updateActive={active,img:data.img,name:data.name,blood:data.blood,Singledistrict:data.Singledistrict,Singleupazila:data.Singleupazila}
       console.log(data,active)
-      axios.put(`http://localhost:5000/userinformation/${data._id}`,updateActive)
+      axios.put(`https://assignment-12-server-drab-nine.vercel.app/userinformation/${data._id}`,updateActive)
       .then(()=>{
         // console.log(res.data)
        Navigate('/')        
@@ -52,7 +52,7 @@ const Allusers = () => {
             text: "Your file has been deleted.",
             icon: "success"
           });
-          axios.delete(`http://localhost:5000/userinformation/${id}`)
+          axios.delete(`https://assignment-12-server-drab-nine.vercel.app/userinformation/${id}`)
           .then(()=>{
             Navigate('/')
           })
@@ -77,7 +77,7 @@ const Allusers = () => {
             text: "succefully added volunteer",
             icon: "success"
           });
-          axios.post('http://localhost:5000/volunteer_data',data)
+          axios.post('https://assignment-12-server-drab-nine.vercel.app/volunteer_data',data)
        .then(()=>console.log('succefully added volunteer'))
        .catch(error=>console.log(error))
         }
@@ -100,7 +100,7 @@ const Allusers = () => {
             text: "succefully added Admin",
             icon: "success"
           });
-          axios.post('http://localhost:5000/donat_data',data)
+          axios.post('https://assignment-12-server-drab-nine.vercel.app/donat_data',data)
        .then(()=>console.log('succefully added Admin'))
        .catch(error=>console.log(error))
         }

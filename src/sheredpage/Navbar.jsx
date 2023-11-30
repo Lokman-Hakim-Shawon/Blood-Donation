@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../firebase/AuthProvider";
 import axios from "axios";
 // import axios from "axios";
@@ -7,7 +7,8 @@ import axios from "axios";
 
 const Navbar = () => {
   const {user,signout}=useContext(AuthContext)
-  const [isAdmin,setisAdmin]=useState('lokmanhakim@gmail.com')
+  const Navigate=useNavigate()
+  const [isAdmin,setisAdmin]=useState(['lokmanhakim@gmail.com'])
   const email=user?.email
   console.log(isAdmin,'isAdmin')
   // console.log(blockdata,'setblockdata')
@@ -15,7 +16,7 @@ const Navbar = () => {
   // console.log(user?.photoURL,'logout')
   // const isUser='lokmanhakimshawon3@gmail.com'
   useEffect(()=>{
-    axios.get('http://localhost:5000/donat_data')
+    axios.get('https://assignment-12-server-drab-nine.vercel.app/donat_data')
   .then(res=>{
     // console.log(res,'res')
     const filterdata=res.data.filter(fildata=>fildata.email==email)
@@ -43,6 +44,9 @@ const Navbar = () => {
           {
             email==isAdmin?
             <Link to='/admin'><li>Dashboard</li></Link>
+            :
+            isAdmin==[]?
+            Navigate('/')
             :
             <Link to='/dashboard'><li>Dashboard</li></Link>
           }
@@ -84,7 +88,8 @@ const Navbar = () => {
        Log Out
      </button>
       :
-     <a className="btn">Button</a>
+      ''
+    //  <a className="btn">login</a>
     }
   </div>
 </div>

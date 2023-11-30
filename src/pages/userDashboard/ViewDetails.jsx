@@ -29,7 +29,7 @@ const ViewDetails = () => {
             confirmButtonText: "Yes, Donate!"
           }).then((result) => {
             
-            axios.put(`http://localhost:5000/blood_request/${id}`,donatData)
+            axios.put(`https://assignment-12-server-drab-nine.vercel.app/blood_request/${id}`,donatData)
             .then(res=>{
               if (result.isConfirmed) {
                 Swal.fire({
@@ -42,10 +42,10 @@ const ViewDetails = () => {
               console.log(res.data)
              })
              .catch(error=>console.log(error))
-            //  axios.post('http://localhost:5000/donat_data',donatedata)
+            //  axios.post('https://assignment-12-server-drab-nine.vercel.app/donat_data',donatedata)
             //  .then(res=>{
             //   const resId=res.data._id
-            //   axios.put(`http://localhost:5000/donat_data/${resId}`,{pending:pending})
+            //   axios.put(`https://assignment-12-server-drab-nine.vercel.app/donat_data/${resId}`,{pending:pending})
             //   .then(res=>{
             //     console.log(res.data)
             //     console.log('confirm data',res)
@@ -73,7 +73,7 @@ const ViewDetails = () => {
       confirmButtonText: "Yes, Donate!"
     }).then((result) => {
       
-      axios.put(`http://localhost:5000/blood_request/${id}`,donatData)
+      axios.put(`https://assignment-12-server-drab-nine.vercel.app/blood_request/${id}`,donatData)
       .then(res=>{
         console.log(res.data)
        })
@@ -103,7 +103,7 @@ const ViewDetails = () => {
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
         if (result.isConfirmed) {
-          axios.delete(`http://localhost:5000/blood_request/${id}`)
+          axios.delete(`https://assignment-12-server-drab-nine.vercel.app/blood_request/${id}`)
           .then(res=>{
            Swal.fire({
                 title: "Deleted!",
@@ -139,7 +139,7 @@ const ViewDetails = () => {
         confirmButtonText: "Yes, Donate!"
       }).then((result) => {
         
-        axios.put(`http://localhost:5000/blood_request/${id}`,CancelDonation)
+        axios.put(`https://assignment-12-server-drab-nine.vercel.app/blood_request/${id}`,CancelDonation)
         .then(res=>{
           console.log(res.data)
          })

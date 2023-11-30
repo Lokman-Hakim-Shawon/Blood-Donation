@@ -17,11 +17,11 @@ const UpdateProfile = () => {
   const data=location.state
   console.log(data,'data')
     useEffect(()=>{
-        axios.get('http://localhost:5000/districtsData')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/districtsData')
         .then(res=>setdistrict(res.data))
         .catch(error=>console.log(error))
     
-        axios.get('http://localhost:5000/upazilasData')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/upazilasData')
         .then(res=>setupazila(res.data))
         .catch(error=>console.log(error))
       },[])
@@ -39,10 +39,10 @@ const UpdateProfile = () => {
         // console.log(res.data.data.url,'res.data')
          const img=res.data.data.url
          const updateuser={img,active,blood,name,Singledistrict,Singleupazila}
-         axios.put(`http://localhost:5000/userinformation/${data}`,updateuser)
+         axios.put(`https://assignment-12-server-drab-nine.vercel.app/userinformation/${data}`,updateuser)
          .then(res=>{
           console.log('axios post',res)
-          Navigate('/dashboard')
+          Navigate('/')
          })
          .catch(error=>console.log('axios error',error))
          updateProfile(user,{

@@ -10,18 +10,18 @@ const SearchDonor = () => {
   const [search,setsearch]=useState([])
     console.log(search)
     useEffect(()=>{
-        axios.get('http://localhost:5000/districtsData')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/districtsData')
         .then(res=>setdistrict(res.data))
         .catch(error=>console.log(error))
     
-        axios.get('http://localhost:5000/upazilasData')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/upazilasData')
         .then(res=>setupazila(res.data))
         .catch(error=>console.log(error))
       },[])
    
        const handlesubmit=(e)=>{
         e.preventDefault()
-        axios.get('http://localhost:5000/userinformation')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/userinformation')
         .then(res=>{
             console.log(res.data)
             const filterdata= res.data.filter(fildata=>fildata.blood==blood && fildata.Singledistrict==Singledistrict && fildata.Singleupazila==Singleupazila)

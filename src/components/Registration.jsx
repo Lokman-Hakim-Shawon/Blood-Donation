@@ -14,11 +14,11 @@ const Registration = () => {
   const [upazila,setupazila]=useState([])
   const [Singleupazila,setSingleupazila]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:5000/districtsData')
+    axios.get('https://assignment-12-server-drab-nine.vercel.app/districtsData')
     .then(res=>setdistrict(res.data))
     .catch(error=>console.log(error))
 
-    axios.get('http://localhost:5000/upazilasData')
+    axios.get('https://assignment-12-server-drab-nine.vercel.app/upazilasData')
     .then(res=>setupazila(res.data))
     .catch(error=>console.log(error))
   },[])  
@@ -42,7 +42,7 @@ const Registration = () => {
          const userinfo={img,name,active,blood,Singledistrict,Singleupazila,email}
          createuser(email,password)
          .then(res=>{
-          axios.post('http://localhost:5000/userinformation',userinfo)
+          axios.post('https://assignment-12-server-drab-nine.vercel.app/userinformation',userinfo)
           .then(res=>console.log('axios post',res))
           .catch(error=>console.log('axios error',error))
           console.log(userinfo)

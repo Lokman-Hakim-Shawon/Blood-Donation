@@ -14,7 +14,7 @@ const AllDonatRequest = () => {
   const [useinfo,setuseinfo]=useState(null)
   console.log(useinfo,'useinfo')
   useEffect(()=>{
-    axios.get('http://localhost:5000/userinformation')
+    axios.get('https://assignment-12-server-drab-nine.vercel.app/userinformation')
     .then(res=>{
       const filterdata=res.data.filter(datas=>user?.email==datas.email)
       filterdata.map(datas=>setuseinfo(datas.active))
@@ -23,12 +23,12 @@ const AllDonatRequest = () => {
     })
     .catch(error=>console.log(error))
 
-    fetch('http://localhost:5000/districtsData')
+    fetch('https://assignment-12-server-drab-nine.vercel.app/districtsData')
     .then(res=>res.json())
     .then(data=>setdistrict(data))
   },[])
   useEffect(()=>{
-    fetch('http://localhost:5000/upazilasData')
+    fetch('https://assignment-12-server-drab-nine.vercel.app/upazilasData')
     .then(res=>res.json())
     .then(data=>setupazila(data))
   },[])
@@ -47,7 +47,7 @@ const AllDonatRequest = () => {
         const donatEmail=''
         const bloodrequest={name,email,donatName,donatEmail,pending,active,date,time,hospital,problem,Singledistrict,Singleupazila,blood}
         console.log(bloodrequest)
-        axios.post('http://localhost:5000/blood_request',bloodrequest)
+        axios.post('https://assignment-12-server-drab-nine.vercel.app/blood_request',bloodrequest)
         .then(res=>{
             Swal.fire({
                 position: "top-end",

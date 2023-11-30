@@ -25,6 +25,7 @@ import PendingRequest from "../pages/AdminDashboard/PendingRequest";
 import UpdateProfile from "../pages/userDashboard/UpdateProfile";
 import SearchDonor from "../components/SearchDonor";
 import AllDonatRequest from "../pages/userDashboard/AllDonatRequest";
+import UserFunding from "../pages/userDashboard/userFunding";
 
 export const router = createBrowserRouter([
     {
@@ -84,6 +85,9 @@ export const router = createBrowserRouter([
         {
           path:'/dashboard/my_donation',
           element:<MyDonation></MyDonation>
+        },{
+          path:'/dashboard/funding',
+          element:<UserFunding></UserFunding>
         },
         {
           path:'/dashboard/profile',
@@ -107,6 +111,10 @@ export const router = createBrowserRouter([
         {
           path:'/admin',
           element:<AdminHome></AdminHome>
+        },
+        {
+          path:'/admin/profile',
+          element:<Profile></Profile>
         },
         {
           path:'/admin/all_users',

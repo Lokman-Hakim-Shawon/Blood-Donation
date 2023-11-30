@@ -14,7 +14,7 @@ const AdminLayout = () => {
     // const admin='lokmanhakim@gmail.com'
     const name=user?.displayName
     useEffect(()=>{
-        axios.get('http://localhost:5000/userinformation')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/userinformation')
     .then(res=>{
         const data=res.data
         setpassdata(data)

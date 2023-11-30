@@ -17,7 +17,7 @@ const UserLayout = () => {
     const name=user?.displayName
     // const users={img,name,info}
     useEffect(()=>{
-        axios.get('http://localhost:5000/userinformation')
+        axios.get('https://assignment-12-server-drab-nine.vercel.app/userinformation')
     .then(res=>{
         const data=res.data
         setpassdata(data)
@@ -43,6 +43,7 @@ const UserLayout = () => {
                 <li><NavLink to='/dashboard/add_blogs'>Add Blogs</NavLink></li>
                 <li><NavLink to='/dashboard/all_donor_request'>All Donation Request</NavLink></li>
                 <li><NavLink to='/dashboard/my_donation'>My All Donation</NavLink></li>
+                <li><NavLink to='/dashboard/funding'>Pay For Funding</NavLink></li>
                 <li><NavLink to='/'>Menu Page</NavLink></li>
             </ul>
             </div>
