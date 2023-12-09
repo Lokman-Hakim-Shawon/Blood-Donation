@@ -12,7 +12,7 @@ const CheckoutForm = () => {
     const elements=useElements()
     const price=200
     useElements(()=>{
-        axios.post('http://localhost:5000/payment_intent',{price:price})
+        axios.post('https://assignment-12-server-drab-nine.vercel.app/payment_intent',{price:price})
         .then(res=>{
             const secret=(res.data.clientSecreat)
             console.log(secret,'secret data')
