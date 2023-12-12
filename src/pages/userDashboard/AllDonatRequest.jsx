@@ -18,7 +18,7 @@ const UserDonorRequest = () => {
     .catch(error=>console.log(error))
     },[])
     return (
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 ml-5">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-2 lg:ml-5">
       {
         data.map(datas=><div key={datas._id} className="card bg-base-100 shadow-xl">
         <div className="card-body">

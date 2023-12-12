@@ -18,11 +18,12 @@ const UserDonorRequest = () => {
     .catch(error=>console.log(error))
     },[])
     return (
-      <div className="grid grid-cols-2 gap-5 my-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-5 my-10">
       {
         data.map(datas=><div key={datas._id} className="card bg-base-100 shadow-xl">
         <div className="card-body">
             <p className="text-end text-xl text-gray-400 font-bold">{datas.pending}</p>
+          <h2 className="card-title">Need {datas.blood} Blood</h2>
           <h2 className="card-title">Need {datas.blood} Blood</h2>
           <h3 className="text-lg">Name :{datas.name} </h3>
           <h3 className="text-lg">Hospital : {datas.hospital}</h3>

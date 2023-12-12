@@ -37,7 +37,7 @@ const AdminHome = () => {
     .catch(error=>console.log(error))
     // console.log(length,'datauserdata')
     return (
-        <div>
+        <div className="ml-2 lg:ml-0">
             <h1 className="bg-blue-100 py-10 text-center text-3xl font-bold">Hello {user?.displayName} wellcome to admin page</h1>
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:mx-10 my-10 lg:gap-10 gap-2">
             <div className="card w-64 lg:w-96 bg-orange-400 text-white ">
